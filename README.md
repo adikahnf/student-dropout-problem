@@ -21,7 +21,7 @@ Sumber data: [Dataset Jaya Jaya Institut][https://github.com/dicodingacademy/dic
 
 Setup environment:
 
-1. Setup Notebook :
+### 1. Setup Notebook :
 - Setup Pip
 ```
 pip install virtualenv
@@ -40,12 +40,12 @@ virtualenv --python C:\Path\To\Python\python.exe venv
 pip install -r requirements.txt
 ```
 
-2. Menjalankan Streamlit
+### 2. Menjalankan Streamlit
 ```
 streamlit run app.py
 ```
 
-3. Menjalankan Dashboard
+### 3. Menjalankan Dashboard
 - Install Metabase versi 0.46.4
 ```
 docker pull metabase/metabase:v0.46.4
@@ -65,19 +65,42 @@ password: root123
 ```
 
 ## Business Dashboard
-Jelaskan tentang business dashboard yang telah dibuat. Jika ada, sertakan juga link untuk mengakses dashboard tersebut.
+Dashboard dibuat dengan menggunakan Metabase dan menjelaskan mengenai faktor-faktor yang berpotensi mempengaruhi graduation rate. Diharapkan dashboard dapat membantu pihak Jaya Jaya Institut dalam memantau perkembangan siswa.
+
+<img src="img/dashboard_akademik.png">
 
 ## Menjalankan Sistem Machine Learning
-Jelaskan cara menjalankan protoype sistem machine learning yang telah dibuat. Selain itu, sertakan juga link untuk mengakses prototype tersebut.
+Link Prototype : https://student-dropout-problem.streamlit.app/
 
+Cara menjalankan prototype :
+### Secara OFFLINE
+1. Buka file app.py
+2. Jalankan streamlit dengan menggunakan : 
 ```
+streamlit run app.py
+```
+3. Isi informasi yg dibutuhkan untuk memprediksi status mahasiswa
 
-```
+### Secara ONLINE
+1. Buka Link Prototype diatas yg berakhiran `streamlit.app`
+2. Isi informasi yang dibutuhkan untuk memprediksi status mahasiswa
 
 ## Conclusion
-Jelaskan konklusi dari proyek yang dikerjakan.
+Berdasarkan analisis data yg dilakukan, ditemukan bahwa sejumlah faktor memiliki pengaruh signifikan terhadap tingkat kelulusan mahasiswa di Jaya Jaya Institut. Faktor Faktor tersebut meliputi :
+- Jumlah Mata Kuliah yg disetujui pada semester pertama dan kedua (`Curricular_units_1st_sem_approved`, `Curricular_units_2nd_sem_approved`)
+- Nilai rata-rata pada kedua semester (`Curricular_units_1st_sem_grade`, `Curricular_units_2nd_sem_grade`)
+- Status pembayaran biaya kuliah (`Tuition_fees_up_to_date`)
+- Status Beasiswa (`scholarship_holder`)
+- Nilai masuk (`Admission_grade`)
+
+Mahasiswa yg memiliki kinerja akademik yg baik sejak awal, tertib dalam administrasi keungan, serta mendapatkan dukungan seperti beasiswa, cenderung memiliki peluang kelulusan yang lebih tinggi.
+Sebaliknya mahasiswa yg mengalami kesulitan finansial / akademik di awal perkuliahan cenderung berisiko lebih tinggi untuk tidak menyelesaikan studi (dropout)
 
 ### Rekomendasi Action Items
-Berikan beberapa rekomendasi action items yang harus dilakukan perusahaan guna menyelesaikan permasalahan atau mencapai target mereka.
-- action item 1
-- action item 2
+Berdasarkan hasil proyek, berikut adalah beberapa rekomendasi action items :
+1. Perluasan Program Beasiswa untuk Mahasiswa Berpenghasilan Rendah
+- Tingkatkan akses terhadap pendidikan dengan memperluas cakupan program beasiswa, khususnya bagi mahasiswa dari latar belakang ekonomi kurang mampu. Beasiswa dapat diberikan secara penuh atau parsial, mencakup biaya kuliah, pembelian buku, serta dukungan untuk kebutuhan hidup dasar.
+2. Penyediaan Program Mentoring Akademik
+- Implementasikan program pendampingan (mentoring) yang melibatkan mahasiswa senior atau dosen untuk membantu mahasiswa yang mengalami kesulitan akademik. Program ini bertujuan untuk memberikan bimbingan dalam memahami materi kuliah, strategi belajar efektif, serta dukungan emosional.
+3. Pengembangan Kelas Fleksibel: Online dan Kelas Malam
+- Tawarkan lebih banyak pilihan kelas online dan kelas malam untuk mengakomodasi kebutuhan mahasiswa yang memiliki keterbatasan waktu, seperti mahasiswa yang bekerja paruh waktu atau memiliki tanggung jawab keluarga. Fleksibilitas ini memungkinkan mahasiswa untuk mengatur waktu belajar secara lebih optimal, sehingga dapat tetap mengikuti perkuliahan tanpa mengorbankan tanggung jawab lainnya.
